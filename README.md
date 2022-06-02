@@ -8,10 +8,10 @@ Im still working on problems with restricted routes using the token. so login ri
 ## backend webapi
 
 - Go to webapi folder then run commands:\
-  dotnet run\
+  dotnet run
 
-## frontend react##
+## frontend react
 
-- Go to react folder then run following commands\
+- Go to react folder then run following commands:\
   npm install (to install all dependencies packages)\
   npm start (to run react app)
