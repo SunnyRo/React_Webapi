@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import AuthenticationService from "./Authentication";
-import { useLocation, useNavigate } from "react-router";
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -31,8 +30,14 @@ export default class Login extends Component {
       .then((res) => {
         console.log(res.data);
         localStorage.setItem("user", res.data);
-        useNavigate("/");
-        // this.props.history.push("/");
+        this.setState({
+          message: "Logged in please go to home page to see your token",
+        });
+      })
+      .catch((error) => {
+        console.log("eerrro heheeh");
+        console.log(error.response.data);
+        this.setState({ message: error.response.data });
       });
     this.setState({ username: "", password: "" });
   }

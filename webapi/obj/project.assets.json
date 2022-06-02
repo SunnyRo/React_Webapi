@@ -2256,11 +2256,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sun\\source\\repos\\webapi\\webapi.csproj",
+      "projectUniqueName": "C:\\Users\\sun\\source\\repos\\React_Webapi\\webapi\\webapi.csproj",
       "projectName": "webapi",
-      "projectPath": "C:\\Users\\sun\\source\\repos\\webapi\\webapi.csproj",
+      "projectPath": "C:\\Users\\sun\\source\\repos\\React_Webapi\\webapi\\webapi.csproj",
       "packagesPath": "C:\\Users\\sun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sun\\source\\repos\\webapi\\obj\\",
+      "outputPath": "C:\\Users\\sun\\source\\repos\\React_Webapi\\webapi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sun\\AppData\\Roaming\\NuGet\\NuGet.Config",

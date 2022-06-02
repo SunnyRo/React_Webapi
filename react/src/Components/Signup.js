@@ -35,7 +35,6 @@ export default class Signup extends Component {
         this.setState({ message: error.response.data });
       });
     this.setState({ username: "", password: "" });
-    this.props.history.push("/signin");
   }
 
   render() {
