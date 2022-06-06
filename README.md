@@ -7,13 +7,13 @@
 
 ## Backend webapi
 
-### Go to webapi folder then run commands:\
+### Go to Server folder then run commands:\
 
 - dotnet run
 
 ## Frontend react
 
-### Go to react folder then run following commands:\
+### Go to Client folder then run following commands:\
 
 - npm install (to install all dependencies packages)\
 - npm start (to run react app)
