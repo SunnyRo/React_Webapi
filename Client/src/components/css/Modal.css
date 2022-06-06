@@ -1,0 +1,226 @@
+.btn {
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 42%;
+    zoom: 1.5;
+}
+
+input[type="submit"] {
+    border-radius: 5px;
+    background-color: lightgray;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: whitesmoke;
+}
+
+.modal {
+    position: fixed;
+    /*position: absolute;*/
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 115%;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.modal_content {
+    background-color: rgb(238, 238, 238);
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    width: 30%;
+    padding: 20px;
+    border-radius: 15px;
+    /*border: 3px solid black;*/
+    box-shadow: 5px 5px 10px black;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    background-color: white;
+    margin: 3px;
+}
+
+input[type="text"]:focus {
+    background-color: lightgray;
+    border: 3px solid black;
+}
+
+.close {
+    color: black;
+    background-color: lightgray;
+    border: 4px solid gray;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px black;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+}
+
+.close:hover {
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.submit_input {
+    height: 2.5rem;
+    width: 5rem;
+}
+
+.label_container {
+    display: flex;
+    justify-content: center;
+}
+
+.label_container .first_name {
+    width: 25%;
+    font-size: 1.5rem;
+}
+
+.label_container .first_name_input {
+    height: 2rem;
+    font-size: 1.5rem;
+    width: 60%;
+}
+
+.label_container .last_name {
+    width: 25%;
+    font-size: 1.5rem;
+}
+
+.label_container .last_name_input {
+    height: 2rem;
+    font-size: 1.5rem;
+    width: 60%;
+}
+
+.modal_content .heading {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.label_container .phone {
+    width: 15%;
+    font-size: 1.5rem;
+}
+
+.label_container .phone_input {
+    height: 2rem;
+    font-size: 1.5rem;
+    width: 60%;
+}
+
+.label_container .email {
+    width: 15%;
+    font-size: 1.5rem;
+}
+
+.label_container .email_input {
+    height: 2rem;
+    font-size: 1.5rem;
+    width: 60%;
+}
+
+.label_container .role {
+    width: 30%;
+    font-size: 1rem;
+}
+
+.label_container .role_input {
+    height: 2rem;
+    font-size: 1rem;
+    width: 60%;
+}
+
+.label_container .street {
+    width: 25%;
+    font-size: 1.5rem;
+}
+
+.label_container .street_input {
+    height: 2rem;
+    font-size: 1.5rem;
+    width: 60%;
+}
+
+.label_container .city {
+    width: 20%;
+    font-size: 1.5rem;
+}
+
+.label_container .city_input {
+    height: 2rem;
+    font-size: 1.5rem;
+    width: 60%;
+}
+
+.label_container .zipcode {
+    width: 20%;
+    font-size: 1.5rem;
+}
+
+.label_container .zip_input {
+    height: 2rem;
+    font-size: 1.5rem;
+    width: 60%;
+}
+
+.modal_content .remove_heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.modal_content .yes_button {
+    height: 2rem;
+    width: 5rem;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+}
+
+.modal_content .no_button {
+    height: 2rem;
+    width: 5rem;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+}
+
+.label_container .password {
+    width: 30%;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.label_container .password_input {
+    height: 2rem;
+    margin-bottom: 1rem;
+    width: 65%;
+}
+
+.label_container .confirm_password {
+    width: 30%;
+    font-size: 1.5rem;
+}
+
+.label_container .confirm_password_input {
+    height: 2rem;
+    margin-bottom: 1rem;
+    width: 65%;
+}
