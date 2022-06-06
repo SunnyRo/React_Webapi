@@ -7,6 +7,14 @@ public class ApplicationDbContext : DbContext
         : base(options)
     {
     }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Role>().HasData(new Role 
+        {
+            Name = "Admin",
+            id = Guid.NewGuid()
+        });
+    }
     public DbSet<User> Users{ get; set; }
     public DbSet<Role> Roles{ get; set; }
     public DbSet<UserRole> UserRoles{get;set;}

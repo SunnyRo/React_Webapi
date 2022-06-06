@@ -42,6 +42,9 @@ const Login = () => {
             var decoded = jwt_decode(accessToken);
             const roles = decoded[process.env.REACT_APP_CLAIM_ROLE];
             console.log(roles);
+            // let newRoles = [...roles, "User"];
+            // roles = new roles();
+            // console.log(roles);
             setAuth({ user, pwd, roles, accessToken, refreshToken });
             setUser("");
             setPwd("");

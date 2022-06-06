@@ -63,6 +63,11 @@ namespace Server.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Roles",
+                columns: new[] { "id", "Name" },
+                values: new object[] { new Guid("fa322fca-aec9-4f72-b541-fdab54115ded"), "Admin" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_UserRoles_RoleId",
                 table: "UserRoles",

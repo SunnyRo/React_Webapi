@@ -12,7 +12,7 @@ using Server.Data;
 namespace Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220605024604_InitialCreate")]
+    [Migration("20220606204358_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,13 @@ namespace Server.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            id = new Guid("fa322fca-aec9-4f72-b541-fdab54115ded"),
+                            Name = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("Server.Models.User", b =>

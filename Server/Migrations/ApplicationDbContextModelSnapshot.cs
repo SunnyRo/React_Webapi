@@ -34,6 +34,13 @@ namespace Server.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            id = new Guid("fa322fca-aec9-4f72-b541-fdab54115ded"),
+                            Name = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("Server.Models.User", b =>

@@ -42,7 +42,9 @@ namespace Server.Controllers
             List<string> roles = GetUserRoles(user.UserName);
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, user.UserName)
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.Role, "User"),
+                new Claim(ClaimTypes.Role, "DummyRole")
             };
             foreach (string role in roles)
             {
