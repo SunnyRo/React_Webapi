@@ -54,6 +54,7 @@ namespace Server.Controllers
             var refreshToken = _tokenService.GenerateRefreshToken(claims);
 
             user.RefreshToken = refreshToken;
+            user.RefreshTokenExpiryTime = DateTime.Now.AddMinutes(15);
 
             _context.SaveChanges();
 

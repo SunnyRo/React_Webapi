@@ -88,7 +88,7 @@ const Roles = () => {
             {roles?.length ? (
                 <ul>
                     {roles.map((role, i) => (
-                        <li key={i}>
+                        <li className="item_container" key={i}>
                             {role?.name}
                             <button onClick={() => deleteRole(role?.name)}>
                                 Delete
@@ -99,17 +99,6 @@ const Roles = () => {
             ) : (
                 <p>No users to display</p>
             )}
-            {/* {roles?.length ? (
-                <select value={role} onChange={onRoleChanged}>
-                    {roles.map((role, i) => (
-                        <option key={i} value={i}>
-                            {role?.name}
-                        </option>
-                    ))}
-                </select>
-            ) : (
-                <p>No users to display</p>
-            )} */}
             <div className="flexGlow">
                 <button
                     onClick={() => {

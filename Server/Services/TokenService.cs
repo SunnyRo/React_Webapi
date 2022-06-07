@@ -23,7 +23,7 @@ namespace Server.Services
                 issuer: "https://localhost:3000",
                 audience: "https://localhost:3000",
                 claims: claims,
-                expires: DateTime.Now.AddSeconds(15),
+                expires: DateTime.Now.AddSeconds(5),
                 // expires: DateTime.Now.AddMinutes(1),
                 signingCredentials: signinCredentials
             );
@@ -41,7 +41,7 @@ namespace Server.Services
                 issuer: "https://localhost:3000",
                 audience: "https://localhost:3000",
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(5),
+                expires: DateTime.Now.AddMinutes(30),
                 signingCredentials: signinCredentials
             );
 
@@ -66,7 +66,7 @@ namespace Server.Services
                 ValidateIssuer = false,
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345")),
-                ValidateLifetime = true//here we are saying that we don't care about the token's expiration date
+                ValidateLifetime = false//here we are saying that we don't care about the token's expiration date
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();

@@ -25,7 +25,7 @@ namespace JwtAuthentication.Server.Controllers
         public IActionResult Refresh(TokenApiModel tokenApiModel)
         {
             if (tokenApiModel is null)
-                return BadRequest("Invalid client request");
+                return BadRequest("request is wrong Invalid client request");
 
             // string accessToken = tokenApiModel.AccessToken;
             string refreshToken = tokenApiModel.RefreshToken;
@@ -35,8 +35,15 @@ namespace JwtAuthentication.Server.Controllers
 
             var user = _context.Users.SingleOrDefault(u => u.UserName == username);
 
-            if (user == null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.Now)
-                return BadRequest("Invalid client request");
+            // if (user == null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.Now)
+            //     return BadRequest("Invalid client request");
+
+            if (user == null)
+                return BadRequest("no user");
+            if (user.RefreshToken != refreshToken)
+                return BadRequest("something wrong with refresh token");
+            if (user.RefreshTokenExpiryTime <= DateTime.Now)
+                return BadRequest(user.RefreshTokenExpiryTime);
 
             var newAccessToken = _tokenService.GenerateAccessToken(principal.Claims);
             // var newRefreshToken = _tokenService.GenerateRefreshToken();
