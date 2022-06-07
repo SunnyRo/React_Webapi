@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import { useNavigate, useLocation } from "react-router-dom";
 import CreateRoleModal from "./CreateRoleModal";
+import "./css/Roles.css";
 const Roles = () => {
     const [roles, setRoles] = useState();
     const [role, setRole] = useState();
@@ -86,16 +87,18 @@ const Roles = () => {
             )}
             <h2>Roles List</h2>
             {roles?.length ? (
-                <ul>
+                <div>
                     {roles.map((role, i) => (
-                        <li className="item_container" key={i}>
-                            {role?.name}
-                            <button onClick={() => deleteRole(role?.name)}>
-                                Delete
-                            </button>
-                        </li>
+                        <div className="item_container" key={i}>
+                            <div className="item_name">{role?.name}</div>
+                            <div className="item_button">
+                                <button onClick={() => deleteRole(role?.name)}>
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
                     ))}
-                </ul>
+                </div>
             ) : (
                 <p>No users to display</p>
             )}

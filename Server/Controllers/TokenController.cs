@@ -20,7 +20,7 @@ namespace JwtAuthentication.Server.Controllers
             this._tokenService = tokenService ?? throw new ArgumentNullException(nameof(tokenService));
         }
 
-        [HttpPost]
+        [HttpPost,Authorize]
         [Route("refresh")]
         public IActionResult Refresh(TokenApiModel tokenApiModel)
         {

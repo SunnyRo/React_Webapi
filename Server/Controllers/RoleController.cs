@@ -20,7 +20,7 @@ namespace Server.Controllers
             _context= context?? throw new ArgumentNullException(nameof(context));
             _tokenService = tokenService ?? throw new ArgumentNullException(nameof(tokenService));
         }
-        [HttpGet,Authorize,Route("roles")]
+        [HttpGet,Authorize(Roles="Admin"),Route("roles")]
         public async Task<ActionResult<IEnumerable<Role>>> Roles()
         {
             
@@ -40,7 +40,7 @@ namespace Server.Controllers
             return await roleList;
 
         }
-        [HttpPost,Authorize,Route("createrole")]
+        [HttpPost,Authorize(Roles="Admin"),Route("createrole")]
         public async Task<ActionResult<IEnumerable<Role>>> CreateRole([FromBody] RoleDto request)
         {
             if(_context.Roles.Any(role => role.Name == request.Name))
@@ -53,7 +53,7 @@ namespace Server.Controllers
             await _context.SaveChangesAsync();
             return await _context.Roles.ToListAsync();
         }
-        [HttpPost,Authorize,Route("deleterole")]
+        [HttpPost,Authorize(Roles="Admin"),Route("deleterole")]
         public async Task<ActionResult<IEnumerable<Role>>> DeleteRole([FromBody] RoleDto request)
         {
             try
@@ -73,7 +73,7 @@ namespace Server.Controllers
 
             }
         }
-        [HttpPost,Authorize,Route("addrole")]
+        [HttpPost,Authorize(Roles="Admin"),Route("addrole")]
         public async Task<ActionResult<IEnumerable<UserRoleInfo>>> AddUserRole([FromBody] UserRoleDto request)
         {
             try
@@ -104,7 +104,7 @@ namespace Server.Controllers
                 return BadRequest("There is neither role or user in the server!");
             }
         }      
-        [HttpPost,Authorize,Route("removerole")]
+        [HttpPost,Authorize(Roles="Admin"),Route("removerole")]
         public async Task<ActionResult<IEnumerable<UserRoleInfo>>> RemoveUserRole([FromBody] UserRoleDto request)
         {
             try

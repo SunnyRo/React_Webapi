@@ -3,6 +3,7 @@ import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import { useNavigate, useLocation } from "react-router-dom";
 import AddRoleModal from "./AddRoleModal";
 import useAuth from "../hooks/useAuth";
+import "./css/UserRoles.css";
 const UserRoles = () => {
     const { setAuth } = useAuth();
     const [roles, setRoles] = useState();
@@ -98,16 +99,18 @@ const UserRoles = () => {
             )}
             <h2>My Roles</h2>
             {roles?.length ? (
-                <ul>
+                <div>
                     {roles.map((role, i) => (
-                        <li key={i}>
-                            {role?.role}
-                            <button onClick={() => RemoveRole(role?.role)}>
-                                Delete
-                            </button>
-                        </li>
+                        <div className="item_container" key={i}>
+                            <div className="item_name">{role?.role}</div>
+                            <div className="item_button">
+                                <button onClick={() => RemoveRole(role?.role)}>
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
                     ))}
-                </ul>
+                </div>
             ) : (
                 <p>I have no roles!!!</p>
             )}
